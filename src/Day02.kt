@@ -5,7 +5,7 @@ private data class Game(
         val sets: List<GameSet>
 )
 
-object Day02 : AdventOfCodeSolver(2) {
+object Day02 : AdventOfCodeSolver(day = 2) {
     override fun part1(input: List<String>): String {
         val loadedBag = mapOf(
                 "red" to 12,

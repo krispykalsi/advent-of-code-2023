@@ -36,7 +36,7 @@ private class NumberTrie : Trie(
     }
 }
 
-object Day01 : AdventOfCodeSolver(1) {
+object Day01 : AdventOfCodeSolver(day = 1) {
     override fun part1(input: List<String>): String {
         var sum = 0
         for (line in input) {

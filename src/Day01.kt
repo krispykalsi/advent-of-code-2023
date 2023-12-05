@@ -78,5 +78,5 @@ object Day01 : AdventOfCodeSolver(1) {
 }
 
 fun main() {
-    Day01.solve("142")
+    Day01.solve("142", "281")
 }

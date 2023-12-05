@@ -1,4 +1,4 @@
-class NumberTrie : Trie(
+private class NumberTrie : Trie(
         "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "zero",
         "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"
 ) {
@@ -34,11 +34,10 @@ class NumberTrie : Trie(
     private fun parseWordOrDigitToNumber(wordOrDigit: String): Int {
         return wordToIntMappings[wordOrDigit] ?: wordOrDigit.toInt()
     }
-
 }
 
-fun main() {
-    fun part1(input: List<String>): Int {
+object Day01 : AdventOfCodeSolver(1) {
+    override fun part1(input: List<String>): String {
         var sum = 0
         for (line in input) {
             var firstNum = ' '
@@ -54,10 +53,10 @@ fun main() {
             }
             sum += "$firstNum$lastNum".toInt()
         }
-        return sum
+        return "$sum"
     }
 
-    fun part2(input: List<String>): Int {
+    override fun part2(input: List<String>): String {
         val numberTrie = NumberTrie()
 
         var sum = 0
@@ -74,14 +73,10 @@ fun main() {
 
             sum += "$firstNum$lastNum".toInt()
         }
-        return sum
+        return "$sum"
     }
+}
 
-    // test if implementation meets criteria from the description, like:
-    val testInput = readInput("Day01_test")
-    check(part1(testInput) == 142)
-
-    val input = readInput("Day01")
-    part1(input).println()
-    part2(input).println()
+fun main() {
+    Day01.solve("142")
 }
